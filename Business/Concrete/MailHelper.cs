@@ -22,7 +22,7 @@ namespace AspNetCoreIdentity.SMTP
                 SmtpClient client = new SmtpClient();
 
                 client.UseDefaultCredentials = false;
-                client.Credentials = new NetworkCredential("erenbaba1212@gmail.com", "03123897461eren");
+                client.Credentials = new NetworkCredential("erenbaba1212@gmail.com", "");
                 client.Port = 587;
                 client.Host = "smtp.gmail.com";
                 client.EnableSsl = true;
@@ -60,7 +60,7 @@ namespace AspNetCoreIdentity.SMTP
                 SmtpClient client = new SmtpClient();
 
                 client.UseDefaultCredentials = false;
-                client.Credentials = new NetworkCredential("erenbaba1212@gmail.com", "03123897461eren");
+                client.Credentials = new NetworkCredential("erenbaba1212@gmail.com", "");
                 client.Port = 587;
                 client.Host = "smtp.gmail.com";
                 client.EnableSsl = true;
@@ -100,7 +100,7 @@ namespace AspNetCoreIdentity.SMTP
                 SmtpClient client = new SmtpClient();
 
                 client.UseDefaultCredentials = false;
-                client.Credentials = new NetworkCredential("erenbaba1212@gmail.com", "03123897461eren");
+                client.Credentials = new NetworkCredential("erenbaba1212@gmail.com", "");
                 client.Port = 587;
                 client.Host = "smtp.gmail.com";
                 client.EnableSsl = true;
@@ -140,7 +140,7 @@ namespace AspNetCoreIdentity.SMTP
                 SmtpClient client = new SmtpClient();
 
                 client.UseDefaultCredentials = false;
-                client.Credentials = new NetworkCredential("erenbaba1212@gmail.com", "03123897461eren");
+                client.Credentials = new NetworkCredential("erenbaba1212@gmail.com", "");
                 client.Port = 587;
                 client.Host = "smtp.gmail.com";
                 client.EnableSsl = true;
@@ -174,7 +174,7 @@ namespace AspNetCoreIdentity.SMTP
                 SmtpClient client = new SmtpClient();
 
                 client.UseDefaultCredentials = false;
-                client.Credentials = new NetworkCredential("erenbaba1212@gmail.com", "03123897461eren");
+                client.Credentials = new NetworkCredential("erenbaba1212@gmail.com", "");
                 client.Port = 587;
                 client.Host = "smtp.gmail.com";
                 client.EnableSsl = true;
