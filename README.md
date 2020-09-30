@@ -1,4 +1,4 @@
-Web Tabanlı Bir Dilekçe-Destek Sistemidir. 
+Web Tabanlı Bir Dilekçe-Destek Sistemidir.  Proje Asp Net Core Olarak Yazılmış Ve Asp Net Core Identity Kütüphanesi İle Rol Bazlı Yetkilendirme Uygulanmıştır.
 
 
 # Projede Gerçekleştirilen İşlemler
