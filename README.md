@@ -27,3 +27,6 @@ Web Tabanlı Bir Dilekçe-Destek Sistemidir.  Proje Asp Net Core Olarak Yazılm�
 - Dilekçelere Yorum-İçerik Ekleme
 - Dilekçelerin Durumunu Güncelleyebilme
 - Dilekçe Dökümanlarını Görüntüleme-İndirme
+
+
+Ayrıca Projede Kullanıcıyı Mail İle Bilgilendirme İşlemelri de Bulunmaktadır.
