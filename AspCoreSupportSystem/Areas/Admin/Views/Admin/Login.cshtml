@@ -1,0 +1,32 @@
+﻿@model LoginModel
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row mt-5 p-3">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 mt-4">
+        <h4 class="text-center">Yönetici Girişi</h4>
+        <hr />
+        <form asp-action="Login" asp-area="Admin" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mt-4">
+                <input type="submit" value="Giriş" class="btn btn-block btn-secondary" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+</div>

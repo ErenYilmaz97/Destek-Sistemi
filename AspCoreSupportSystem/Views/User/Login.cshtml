@@ -1,0 +1,54 @@
+﻿@model LoginModel
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row mt-5 p-3">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 mt-4">
+        <h4 class="text-center">Giriş Yap</h4>
+        <hr />
+        <form asp-action="Login" asp-controller="User" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control"/>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control"/>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-8">
+                        <input type="checkbox" asp-for="RememberMe" class="ml-1" /> Beni Hatırla
+                    </div>
+                    <div class="col-md-4">
+                        <a asp-action="ForgetPassword" class="mr-0">Şifremi Unuttum</a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8">
+                        
+                    </div>
+                    <div class="col-md-4 mt-3">
+                        <a href="/Admin/Login" class="mr-0 text-center">Yönetici Girişi</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group mt-4">
+                <input type="submit" value="Giriş" class="btn btn-block btn-primary"/>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+
+
+

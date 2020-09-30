@@ -1,0 +1,61 @@
+﻿@model List<ListPetitionsDto>
+
+<div class="row mt-5">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 bg-white border border-dark mb-5">
+        @{
+            if (ViewBag.PetitionStatus == "PetitionCreated")
+            {
+                <div class="alert alert-success mt-4">
+                <small>Dilekçe Başarıyla Oluşturuldu.</small>
+                </div>
+            }
+            else if (ViewBag.PetitionStatus == "ThereIsUnsolvedPetition")
+            {
+                <div class="alert alert-danger mt-4">
+                    <small>Henüz Sonuçlanmamış Dilekçeniz Var. Sonuçlandıkdan Sonra Yeni Dilekçe Oluşturabilirsiniz.</small>
+                </div>
+            }
+        }
+        <h4 class="mt-4">Dilekçeler</h4>
+        <small>Toplamda @Model.Count Dilekçe</small>
+        <hr/>
+
+        <h4 class="text-right">
+            <a asp-action="CreatePetition" class="btn btn-sm btn-primary">Yeni Dilekçe</a>
+        </h4>
+        
+        
+        @foreach (var petition in Model)
+        {
+    <div class="card mb-5 mt-3">
+        <div class="card-header">
+            <h5><b>@petition.UserName</b> Tarafından <b>@petition.Date.ToShortDateString()</b> Tarihinde Oluşturuldu</h5>
+            @{
+                if (petition.Statu == Statu.Gönderildi)
+                {
+                    <small>Dilekçe Durumu : <b class="text-primary">Gönderildi</b></small>
+                }
+                else if (petition.Statu == Statu.İşlemeAlındı)
+                {
+                    <small>Dilekçe Durumu : <b class="text-warning">İşleme Alındı</b></small>
+                }
+                else
+                {
+                    <small>Dilekçe Durumu : <b class="text-success">Çözüldü</b></small>
+                }
+            }
+
+
+        </div>
+
+        <div class="card-body">
+            <p class="card-text">@petition.Summary</p>
+            <a href="~/Petition/Detail/@petition.PetitionID" class="btn btn-sm btn-primary">Detay</a>
+        </div>
+    </div>
+        }
+    </div>
+    <div class="col-md-2"></div>
+</div>
+

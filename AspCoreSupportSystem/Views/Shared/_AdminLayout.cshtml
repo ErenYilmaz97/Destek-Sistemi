@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+
+<body class="bg-light">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+        </div>
+
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="mr-3 navbar-nav ml-auto">
+                <li class=" mr-3 nav-item">
+                    <a class="nav-link" href="/Admin/Roles">Rol İşlemleri</a>
+                </li>
+                <li class=" mr-3 nav-item">
+                    <a class="nav-link" href="/Admin/Users">Kullanıcı İşlemleri</a>
+                </li>
+                <li class=" mr-3 nav-item">
+                    <a class="nav-link" href="/Admin/Petition">Dilekçeler</a>
+                </li>
+                <li class="mr-3 nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Hesabım
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <profile-link></profile-link>
+                        <a class="dropdown-item"href="/Account/ChangePassword">Şifre Değiştir</a>
+                        <a class="dropdown-item" href="/Account/UserUpdate">Bilgileri Güncelle</a>
+
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Account" asp-action="Logout">Çıkış Yap</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+
+        @RenderBody()
+
+    </div>
+
+
+
+
+
+    <script src="~/lib/jquery/jquery.js"></script>
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+    <script src="~/lib/jquery-validate/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+</body>
+</html>

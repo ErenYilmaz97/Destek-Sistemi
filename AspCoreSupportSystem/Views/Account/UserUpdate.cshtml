@@ -1,0 +1,78 @@
+﻿@model DataAccess.Dto.UserProfileListDto
+
+@{
+    if (ViewBag.isAdmin == true)
+    {
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
+
+}
+
+<div class="row mt-5">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <h4 class="text-center">Bilgileri Güncelle</h4>
+        <hr />
+
+        <form asp-action="UserUpdate" method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lastname" class="control-label"></label>
+                <input asp-for="Lastname" class="form-control" />
+                <span asp-validation-for="Lastname" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="CityID" class="control-label"></label>
+                        <select asp-for="CityID" class="form-control"
+                                asp-items="@(new SelectList(Model.Cities,"CityID","CityName"));"></select>
+                        <span asp-validation-for="CityID" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Gender" class="control-label"></label>
+                        <select class="form-control" asp-for="Gender" asp-items="Html.GetEnumSelectList<Gender>()"></select>
+                        <span asp-validation-for="Gender" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="BirthDay" class="control-label"></label>
+                <input asp-for="BirthDay" class="form-control" />
+                <span asp-validation-for="BirthDay" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <textarea class="form-control" rows="3" asp-for="Address"></textarea>
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Bilgileri Güncelle" class="btn btn-block btn-primary" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+
+</div>
+
+
+

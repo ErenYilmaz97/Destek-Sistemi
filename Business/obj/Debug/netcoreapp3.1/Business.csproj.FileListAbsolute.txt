@@ -1,0 +1,28 @@
+C:\Users\eren_\Desktop\örnekc#\DestekSistemi\Business\bin\Debug\netcoreapp3.1\Business.deps.json
+C:\Users\eren_\Desktop\örnekc#\DestekSistemi\Business\bin\Debug\netcoreapp3.1\Business.dll
+C:\Users\eren_\Desktop\örnekc#\DestekSistemi\Business\bin\Debug\netcoreapp3.1\Business.pdb
+C:\Users\eren_\Desktop\örnekc#\DestekSistemi\Business\obj\Debug\netcoreapp3.1\Business.csprojAssemblyReference.cache
+C:\Users\eren_\Desktop\örnekc#\DestekSistemi\Business\obj\Debug\netcoreapp3.1\Business.AssemblyInfoInputs.cache
+C:\Users\eren_\Desktop\örnekc#\DestekSistemi\Business\obj\Debug\netcoreapp3.1\Business.AssemblyInfo.cs
+C:\Users\eren_\Desktop\örnekc#\DestekSistemi\Business\obj\Debug\netcoreapp3.1\Business.dll
+C:\Users\eren_\Desktop\örnekc#\DestekSistemi\Business\obj\Debug\netcoreapp3.1\Business.pdb
+C:\Users\eren_\Desktop\örnekc#\DestekSistemi\Business\bin\Debug\netcoreapp3.1\Entities.dll
+C:\Users\eren_\Desktop\örnekc#\DestekSistemi\Business\bin\Debug\netcoreapp3.1\Entities.pdb
+C:\Users\eren_\Desktop\örnekc#\DestekSistemi\Business\obj\Debug\netcoreapp3.1\Business.csproj.CopyComplete
+C:\Users\eren_\Desktop\örnekc#\DestekSistemi\Business\bin\Debug\netcoreapp3.1\DataAccess.dll
+C:\Users\eren_\Desktop\örnekc#\DestekSistemi\Business\bin\Debug\netcoreapp3.1\DataAccess.pdb
+C:\Users\eren_\Desktop\örnekc#\DestekSistemi\Business\obj\Debug\netcoreapp3.1\Business.csproj.CoreCompileInputs.cache
+C:\Users\eren_\Desktop\DestekSistemi - Kopya\Business\bin\Debug\netcoreapp3.1\Business.deps.json
+C:\Users\eren_\Desktop\DestekSistemi - Kopya\Business\bin\Debug\netcoreapp3.1\Business.dll
+C:\Users\eren_\Desktop\DestekSistemi - Kopya\Business\bin\Debug\netcoreapp3.1\Business.pdb
+C:\Users\eren_\Desktop\DestekSistemi - Kopya\Business\bin\Debug\netcoreapp3.1\DataAccess.dll
+C:\Users\eren_\Desktop\DestekSistemi - Kopya\Business\bin\Debug\netcoreapp3.1\Entities.dll
+C:\Users\eren_\Desktop\DestekSistemi - Kopya\Business\bin\Debug\netcoreapp3.1\DataAccess.pdb
+C:\Users\eren_\Desktop\DestekSistemi - Kopya\Business\bin\Debug\netcoreapp3.1\Entities.pdb
+C:\Users\eren_\Desktop\DestekSistemi - Kopya\Business\obj\Debug\netcoreapp3.1\Business.csprojAssemblyReference.cache
+C:\Users\eren_\Desktop\DestekSistemi - Kopya\Business\obj\Debug\netcoreapp3.1\Business.AssemblyInfoInputs.cache
+C:\Users\eren_\Desktop\DestekSistemi - Kopya\Business\obj\Debug\netcoreapp3.1\Business.AssemblyInfo.cs
+C:\Users\eren_\Desktop\DestekSistemi - Kopya\Business\obj\Debug\netcoreapp3.1\Business.csproj.CoreCompileInputs.cache
+C:\Users\eren_\Desktop\DestekSistemi - Kopya\Business\obj\Debug\netcoreapp3.1\Business.csproj.CopyComplete
+C:\Users\eren_\Desktop\DestekSistemi - Kopya\Business\obj\Debug\netcoreapp3.1\Business.dll
+C:\Users\eren_\Desktop\DestekSistemi - Kopya\Business\obj\Debug\netcoreapp3.1\Business.pdb

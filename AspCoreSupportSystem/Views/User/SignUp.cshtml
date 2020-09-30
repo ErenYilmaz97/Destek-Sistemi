@@ -1,0 +1,63 @@
+﻿@model SignUpModel
+
+@{
+    ViewData["Title"] = "SıgnUp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="row mt-3">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            
+            <h1 class="h4 mb-3 font-weight-normal text-center">Üye Ol</h1>
+            <hr/>
+            <form asp-action="SignUp" asp-controller="User" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LastName" class="control-label"></label>
+                    <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PhoneNumber" class="control-label"></label>
+                    <input asp-for="PhoneNumber" class="form-control" />
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.SelectedCityID" class="control-label"></label>
+                    <select asp-for="@Model.SelectedCityID" class="form-control" asp-items="@(new SelectList(Model.Cities, "CityID", "CityName"))">
+                        <option value="">Şehir Seçiniz</option>
+                    </select>
+                    
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password" class="control-label"></label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PasswordConfirm" class="control-label"></label>
+                    <input asp-for="PasswordConfirm" class="form-control" />
+                    <span asp-validation-for="PasswordConfirm" class="text-danger"></span>
+                </div>
+                <div class="form-group text-center mt-4">
+                    <input type="submit" value="Kayıt Ol" class="btn btn-block btn-primary" />
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+
+       
+    </div>
+

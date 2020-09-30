@@ -1,0 +1,58 @@
+﻿@using Entities.Entities
+@model List<DataAccess.Dto.UserProfileListDto>
+
+
+    <div class="row mt-5">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            
+            @{
+                if (ViewBag.UserStatus == "UserNotFound")
+                {
+                    <div class="alert alert-danger">
+                        <small>Kullanıcı Bulunamadı.</small>
+                    </div>
+                }
+                else if (ViewBag.UserStatus == "RoleAssigned")
+                {
+                    <div class="alert alert-success">
+                        <small>Rol Atama İşlemi Tamamlandı.</small>
+                    </div>
+                }
+            }
+
+            <h4 class="text-center">Kullanıcılar</h4><hr/>
+            <table class="table table-hover">
+                <thead>
+                <th class="text-center">İsim</th>
+                <th class="text-center">Email</th>
+                <th class="text-center">Telefon</th>
+                <th class="text-center">Cinsiyet</th>
+                <th class="text-center">Roller</th>
+                <th class="text-center">Rol Ata</th>
+                </thead>
+
+
+                <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td class="text-center">
+                            @{ string nameLastname = string.Format(user.Name + " " + user.Lastname);}
+                            @nameLastname
+                        </td>
+
+                        <td class="text-center">@user.Email</td>
+                        <td class="text-center">@user.PhoneNumber</td>
+                        <td class="text-center">@user.Gender</td>
+                        <td class="text-center" user-roles="@user.UserID"></td>
+                        <td class="text-center"><a class="btn btn-sm btn-dark"href="/Admin/RoleAssign?UserID=@user.UserID">Rol Ata</a></td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+

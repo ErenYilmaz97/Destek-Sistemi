@@ -1,0 +1,28 @@
+﻿
+
+
+    <div class="row mt-5">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 border border-dark bg-white">
+            <h5 class="text-center mt-4">Döküman Ekle</h5><hr />
+
+
+            <p class="text-center mb-4">@ViewBag.petitionID Numaralı Dilekçeye Döküman Eklenecek</p>
+
+            <form asp-controller="Document" asp-action="Add" method="post" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <label class="control-label mt-4">Döküman</label>
+                    <input type="file" name="AddDocument" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Döküman Ekle" class="btn btn-block btn-primary mt-5" />
+                </div>
+
+            </form>
+
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+

@@ -1,0 +1,43 @@
+﻿@model CreatePetitionDto
+
+
+
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <h4 class="mt-3">Dilekçe Oluştur</h4>
+        <hr />
+        
+        <form asp-action="CreatePetition" asp-controller="Petition" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Summary" class="control-label"></label>
+                <input asp-for="Summary" class="form-control" />
+                <span asp-validation-for="Summary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstComment" class="control-label"></label>
+                <textarea asp-for="FirstComment" class="form-control" rows="10"></textarea>
+                <span asp-validation-for="FirstComment" class="text-danger"></span>
+                
+            </div>
+
+            <input type="hidden" asp-for="Email" />
+            <input type="hidden" asp-for="UserID" />
+            <input type="hidden" asp-for="isAdmin" />
+
+
+            <div class="form-group mt-4">
+                <small>Dilekçeyi Oluşturdukdan Sonra Döküman Ekleyebilirsiniz.</small>
+                <input type="submit" value="Create" class="btn btn-block btn-primary mt-2" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-3"></div>
+    
+</div>
+
+
+
+

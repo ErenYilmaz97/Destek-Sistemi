@@ -1,0 +1,51 @@
+﻿@model RoleAssignModel
+
+
+    <div class="row mt-5">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+
+            <h4 class="text-center">@Model.NameLastname Kullanıcı İçin Rol Atama</h4><hr />
+
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <form asp-action="RoleAssign" asp-area="Admin" method="post">
+                        @{
+                            for (int i = 0; i < @Model.UserRoles.Count; i++)
+                            {
+                                <div class="form-check">
+
+                                    @{
+                                        if (@Model.UserRoles[i].Exist)
+                                        {
+                                            <input asp-for="UserRoles[i].NewValue" type="checkbox" class="form-check-input" checked />
+                                        }
+                                        else
+                                        {
+                                            <input asp-for="UserRoles[i].NewValue" type="checkbox" class="form-check-input" />
+                                        }
+                                    }
+                                           
+                                    <label asp-for="UserRoles[i].RoleID" class="control-label">@Model.UserRoles[i].RoleName</label>
+
+
+                                    <input asp-for="UserRoles[i].RoleID" type="hidden" />
+                                    <input asp-for="UserRoles[i].RoleName" type="hidden" />
+                                    <input asp-for="UserRoles[i].Exist" type="hidden" />
+                                </div>
+                            }
+                            <input type="hidden" asp-for="UserID" />
+                            <input type="hidden" asp-for="NameLastname" />
+                        }
+
+                        <button type="submit" class="btn btn-dark mt-4">Rol Ata</button>
+                    </form>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+
+            
+        </div>
+        <div class="col-md-4"></div>
+    </div>

@@ -1,0 +1,148 @@
+﻿
+@using System.Xml
+@using Microsoft.EntityFrameworkCore.ValueGeneration.Internal
+@model ListPetitionDetailDto
+
+
+<div class="row mt-5">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 bg-white border border-dark mb-5 rounded">
+
+        @{
+            if (ViewBag.PetitionStatu == "PetitionUpdatedOnProcess" || ViewBag.PetitionStatu == "PetitionUpdatedToDone")
+            {
+                <div class="alert alert-success mt-4">
+                    <small>Dilekçe Durumu Başarıyla Güncellendi.</small>
+                </div>
+            }
+            else if (ViewBag.ContentStatus == "ContentAdded")
+            {
+                <div class="alert alert-success mt-4">
+                    <small>Yorum Başarıyla Eklendi.</small>
+                </div>
+            }
+            else if (ViewBag.ContentStatus == "ContentNotAdded")
+            {
+                <div class="alert alert-danger mt-4">
+                    <small>Yorum Eklenemedi.</small>
+                </div>
+            }
+        }
+
+
+        <div class="row">
+            <div class="col-md-3">
+                <h5 class="mt-4">Dilekçe Bilgisi</h5>
+            </div>
+
+            @if (Model.Petition.Statu == Statu.Gönderildi)
+            {
+                <div class="col-md-6"></div>
+                <div class="col-md-3">
+                    <a class="btn btn-sm btn-warning mt-4 ml-3" href="/Admin/Petition/SetPetitionOnProcess/@Model.Petition.PetitionID">İşleme Al</a>
+                    <a class="btn btn-sm btn-primary mt-4" href="/Admin/Document/@Model.Petition.PetitionID">Dökümanlar</a>
+                </div>
+            }
+            else if (Model.Petition.Statu == Statu.İşlemeAlındı)
+            {
+                <div class="col-md-6"></div>
+                <div class="col-md-3">
+                    <a class="btn btn-sm btn-success mt-4 ml-3" href="/Admin/Petition/SetPetitionToDone/@Model.Petition.PetitionID">Çözüldü</a>
+                    <a class="btn btn-sm btn-primary mt-4" href="/Admin/Document/@Model.Petition.PetitionID">Dökümanlar</a>
+                </div>
+            }
+            else
+            {
+                <div class="col-md-7"></div>
+                <div class="col-md-2">
+
+                    <a class="btn btn-sm btn-primary mt-4 ml-4" href="/Admin/Document/@Model.Petition.PetitionID">Dökümanlar</a>
+                </div>
+            }
+
+        </div><hr />
+
+        <h6>Dilekçe Numarası : @Model.Petition.PetitionID</h6><hr />
+        <h6>Oluşturan : @Model.Petition.UserName</h6><hr />
+        <h6>Oluşturulma Tarihi : @Model.Petition.Date.ToShortDateString()</h6><hr />
+        <h6>
+            Durumu :
+            @{if (Model.Petition.Statu == Statu.Gönderildi)
+                {
+                    <span class="text-primary">Gönderildi</span>
+                }
+                else if (Model.Petition.Statu == Statu.İşlemeAlındı)
+                {
+                    <span class="text-warning">İşleme Alındı</span>
+                }
+                else
+                {
+                    <span class="text-success">Çözüldü</span>
+                }}
+        </h6><hr />
+
+
+        <h6>Konu : @Model.Petition.Summary</h6>
+
+        <br /><br />
+        <h5>İçerik</h5><hr />
+
+        @foreach (var content in Model.Contents)
+        {
+            @if (content.isAdmin)
+            {
+                <div class="card text-center mb-5 mt-5">
+                    <div class="card-header bg-white">
+                        <b>@content.UserName (Yönetici)</b>
+                    </div>
+                    <div class="card-body bg-light">
+
+                        <p class="card-text">@content.Description</p>
+
+                    </div>
+                    <div class="card-footer text-muted bg-white">
+                        <b>Tarih : </b>@content.Date.ToString("dd-MM-yyyy") <b class="ml-4">Saat : </b>@content.Date.ToString("HH:mm")
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="card text-center mb-5 mt-5">
+                    <div class="card-header">
+                        <b>@content.UserName</b>
+                    </div>
+                    <div class="card-body">
+
+                        <p class="card-text">@content.Description</p>
+
+                    </div>
+                    <div class="card-footer text-muted">
+                        <b>Tarih : </b>@content.Date.ToString("dd-MM-yyyy") <b class="ml-4">Saat : </b>@content.Date.ToString("HH:mm")
+                    </div>
+                </div>
+            }
+
+        }
+
+
+        <form asp-action="AddContent" asp-controller="Content" asp-area="Admin" method="post" class="mt-3">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="AddContent" class="control-label"></label>
+                <textarea asp-for="AddContent" class="form-control" rows="7"></textarea>
+                <span asp-validation-for="AddContent" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mt-4 mb-5">
+                <input type="submit" value="Yorum Ekle" class="btn btn-block btn-primary mt-3 mb-5" />
+            </div>
+
+            <input type="hidden" asp-for="Petition.PetitionID" />
+            <input type="hidden" asp-for="@Model.UserID" />
+            <input type="hidden" asp-for="@Model.isAdmin" />
+        </form>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+

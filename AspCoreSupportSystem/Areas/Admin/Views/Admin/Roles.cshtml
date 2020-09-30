@@ -1,0 +1,63 @@
+﻿@using Entities.Entities
+@model List<Entities.Entities.Role>
+
+    <div class="row mt-5">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+
+            @{
+                if (ViewBag.RoleStatus == "RoleCreated")
+                {
+                    <div class="alert alert-success">
+                        <small>Rol Başarıyla Eklendi.</small>
+                    </div>
+                }
+                else if (ViewBag.RoleStatus == "RoleDeleted")
+                {
+                    <div class="alert alert-success">
+                        <small>Rol Başarıyla Silindi.</small>
+                    </div>
+                }
+                else if (ViewBag.RoleStatus == "RoleNotFound")
+                {
+                    <div class="alert alert-danger">
+                        <small>Rol Bulunamadı.</small>
+                    </div>
+                }
+                else if (ViewBag.RoleStatus == "RoleUpdated")
+                {
+                    <div class="alert alert-success">
+                        <small>Rol Başarıyla Güncellendi.</small>
+                    </div>
+                }
+            }
+
+            <table class="table table hover">
+                <thead>
+                <th class="text-center">Rol</th>
+                <th class="text-center">İşlemler</th>
+
+                </thead>
+
+                <tbody>
+
+                    @foreach (Role role in Model)
+                    {
+                        <tr>
+                            <td class="text-center">@role.Name</td>
+                            <td class="text-center">
+                                <a class="btn btn-sm btn-dark" href="/Admin/DeleteRole?RoleID=@role.Id">Sil</a>
+                                <a class="btn btn-sm btn-dark" href="/Admin/UpdateRole?RoleID=@role.Id">Güncelle</a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+
+            <a class="btn btn-block btn-dark mt-3" href="/Admin/CreateRole">Rol Ekle</a>
+
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+

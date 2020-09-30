@@ -1,0 +1,39 @@
+﻿@using Entities.Entities
+@model List<Entities.Entities.Document>
+
+
+<div class="row mt-5">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+
+        @{if (ViewBag.DocumentStatus == "DocumentAdded")
+        {
+            <div class="alert alert-success mt-4 mb-4">
+                <small>Döküman Başarıyla Eklendi.</small>
+            </div>
+        }
+        else if (ViewBag.DocumentStatus == "DocumentNotAdded")
+        {
+            <div class="alert alert-danger mt-4 mb-4">
+                <small>Döküman Eklenemedi.</small>
+            </div>
+        }}
+        <table class="table table-hover mt-4">
+            <thead>
+            <th class="text-center">Döküman Adı</th>
+            <th class="text-center">İndir</th>
+            </thead>
+                
+            <tbody>
+            @foreach (Document document in Model)
+            {
+                <tr>
+                    <td class="text-center">@document.FileName</td>
+                    <td class="text-center"><a class="btn btn-sm btn-primary" href="/Admin/Document/Download?documentName=@document.DocumentName">İndir</a></td>
+                </tr>
+
+            }
+            </tbody>
+        </table>
+        <div class="col-md-3"></div>
+    </div></div>

@@ -1,0 +1,25 @@
+﻿@model AspCoreSupportSystem.Areas.Admin.Models.CreateRoleModel
+
+
+<div class="row mt-5">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <h4 class="text-center">Rol Oluştur</h4>
+        <hr />
+        <form asp-action="CreateRole" asp-area="Admin">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="RoleName" class="control-label"></label>
+                <input asp-for="RoleName" class="form-control"/>
+                <span asp-validation-for="RoleName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Oluştur" class="btn btn-block btn-primary"/>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+
+
+

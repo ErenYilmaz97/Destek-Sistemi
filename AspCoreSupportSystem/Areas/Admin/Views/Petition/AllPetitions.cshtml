@@ -1,0 +1,59 @@
+﻿@model List<ListPetitionsDto>
+
+<div class="row mt-5">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 bg-white border border-dark mb-5">
+        
+        @{
+            if (ViewBag.Statu == "PetitionNotFound")
+            {
+                <div class="alert alert-danger mt-4">
+                    <small>Dilekçe Bulunamadı.</small>
+                </div>
+            }
+            else if (ViewBag.Statu == "Error")
+            {
+                <div class="alert alert-danger mt-4">
+                    <small>Bir Hata Oluştu.</small>
+                </div>
+            }
+        }
+
+        <h4 class="mt-4">Dilekçeler</h4>
+        <small>Toplamda @Model.Count Dilekçe</small>
+        <hr />
+
+
+
+        @foreach (var petition in Model)
+        {
+            <div class="card mb-5 mt-3">
+                <div class="card-header">
+                    <h5><b>@petition.UserName</b> Tarafından <b>@petition.Date.ToShortDateString()</b> Tarihinde Oluşturuldu</h5>
+                    @{
+                        if (petition.Statu == Statu.Gönderildi)
+                        {
+                            <small>Dilekçe Durumu : <b class="text-primary">Gönderildi</b></small>
+                        }
+                        else if (petition.Statu == Statu.İşlemeAlındı)
+                        {
+                            <small>Dilekçe Durumu : <b class="text-warning">İşleme Alındı</b></small>
+                        }
+                        else
+                        {
+                            <small>Dilekçe Durumu : <b class="text-success">Çözüldü</b></small>
+                        }
+                    }
+
+
+                </div>
+
+                <div class="card-body">
+                    <p class="card-text">@petition.Summary</p>
+                    <a class="btn btn-sm btn-primary" href="/Admin/Petition/Detail/@petition.PetitionID">Detay</a>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="col-md-2"></div>
+</div>
