@@ -1,0 +1,21 @@
+﻿@model List<PetitionInfoDto>
+
+<table class="table table-striped table-responsive table-hover">
+    
+    <tr>
+        <td>Petition Status</td>
+        <td>Count</td>
+    </tr>
+
+    @foreach (PetitionInfoDto petitioninfo in Model)
+    {
+        <tr>
+            <td>@petitioninfo.Statu</td>
+            <td>@petitioninfo.Count</td>
+        </tr>
+
+    }
+
+
+</table>
+

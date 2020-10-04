@@ -15,5 +15,6 @@ namespace Business.Abstract
         List<ListPetitionsDto> ListAllPetitions();
         bool SetPetitionOnProcess(int petitionID);
         bool SetPetitionToDone(int petitionID);
+        List<PetitionInfoDto> GetPetitionInfo();
     }
 }

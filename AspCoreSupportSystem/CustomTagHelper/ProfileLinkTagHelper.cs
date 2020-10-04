@@ -25,6 +25,7 @@ namespace AspCoreSupportSystem.CustomTagHelper
         {
             var user = await _userManager.GetUserAsync(_httpContextAccessor.HttpContext.User);
             string html = string.Empty;
+            
 
             html += $"<a class='dropdown-item' href='/Account/Profile?UserID={user.Id}'><h5>{user.Name} {user.Lastname}</h5></a>";
             output.Content.SetHtmlContent(html);

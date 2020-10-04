@@ -81,7 +81,7 @@ namespace AspCoreSupportSystem.Areas.Admin.Controllers
 
 
         [Route("/Admin/Petition/SetPetitionOnProcess/{petitionID:int}")]
-        public async Task<IActionResult> SetPetitionOnProcess(int petitionID)
+        public  IActionResult SetPetitionOnProcess(int petitionID)
         {
             
             var getPetition = _petitionService.GetPetition(petitionID);
@@ -110,7 +110,7 @@ namespace AspCoreSupportSystem.Areas.Admin.Controllers
 
 
         [Route("/Admin/Petition/SetPetitionToDone/{petitionID:int}")]
-        public async Task<IActionResult> SetPetitionOnToDone(int petitionID)
+        public  IActionResult SetPetitionOnToDone(int petitionID)
         {
 
             var getPetition = _petitionService.GetPetition(petitionID);

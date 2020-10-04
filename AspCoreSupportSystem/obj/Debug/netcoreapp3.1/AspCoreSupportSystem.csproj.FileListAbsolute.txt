@@ -376,3 +376,5 @@ C:\Users\eren_\Desktop\örnekc#\DestekSistemi\AspCoreSupportSystem\obj\Debug\net
 C:\Users\eren_\Desktop\örnekc#\DestekSistemi\AspCoreSupportSystem\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Petition\AllPetitions.cshtml.g.cs
 C:\Users\eren_\Desktop\örnekc#\DestekSistemi\AspCoreSupportSystem\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Petition\PetitionNotFound.cshtml.g.cs
 C:\Users\eren_\Desktop\örnekc#\DestekSistemi\AspCoreSupportSystem\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Document\Documents.cshtml.g.cs
+C:\Users\eren_\Desktop\örnekc#\DestekSistemi\AspCoreSupportSystem\obj\Debug\netcoreapp3.1\Razor\Views\Content\Deneme.cshtml.g.cs
+C:\Users\eren_\Desktop\örnekc#\DestekSistemi\AspCoreSupportSystem\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\User\Default.cshtml.g.cs

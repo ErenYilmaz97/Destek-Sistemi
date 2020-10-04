@@ -161,5 +161,11 @@ namespace Business.Concrete
             }
 
         }
+
+
+        public List<PetitionInfoDto> GetPetitionInfo()
+        {
+            return _petitionDal.GetPetitionInfo();
+        }
     }
 }

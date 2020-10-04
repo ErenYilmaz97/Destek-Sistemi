@@ -117,5 +117,18 @@ namespace DataAccess.Concrete.EfSqlServer
             _context.SaveChanges();
 
         }
+
+
+
+        public List<PetitionInfoDto> GetPetitionInfo()
+        {
+            var result = _context.Petitions.GroupBy(x => x.Statu).Select(g => new PetitionInfoDto()
+            {
+                Statu = (Statu) g.Key,
+                Count = g.Count()
+            }).ToList();
+
+            return result;
+        }
     }
 }

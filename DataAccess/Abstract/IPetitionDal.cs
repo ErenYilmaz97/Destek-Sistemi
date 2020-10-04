@@ -14,5 +14,6 @@ namespace DataAccess.Abstract
         List<ListPetitionsDto> ListAllPetitions();
         void SetPetitionOnProcess(int petitionID);
         void SetPetitionToDone(int petitionID);
+        List<PetitionInfoDto> GetPetitionInfo();
     }
 }

@@ -64,5 +64,12 @@ namespace AspCoreSupportSystem.Controllers
             }
 
         }
+
+
+        [HttpGet]
+        public IActionResult Deneme()
+        {
+            return View();
+        }
     }
 }
